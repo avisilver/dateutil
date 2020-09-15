@@ -1,5 +1,11 @@
 [build-system]
-requires = ["setuptools", "wheel", "setuptools_scm"]
+requires = [
+    "setuptools; python_version != '3.3'",
+    "setuptools<40.0; python_version == '3.3'",
+    "wheel",
+    "setuptools_scm"
+]
+build-backend = "setuptools.build_meta"
 
 [tool.towncrier]
     package = "dateutil"
@@ -38,5 +44,5 @@ requires = ["setuptools", "wheel", "setuptools_scm"]
     [[tool.towncrier.type]]
         directory = "misc"
         name = "Misc"
-        showcontent = false
+        showcontent = true
 
